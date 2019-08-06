@@ -1,9 +1,18 @@
 #input av informationer vilka behovs for att beräkna BMI (längd och vikt)
 height = float(input("skriv hur lång är du? (i centimeter) : "))
 weight = float(input("skriv din vikt: "))
+if weight == 70:
+    sys.exit() 
 
 height = height/100
-
-print("Din BMI är: ",
 #kroppsvikten i kg delad med kroppslängden i meter i kvadrat (kg/m2)
-      round(weight / (height * height), 2))
+BMI = round(weight / (height * height), 2)
+
+
+#hur mycket kalorier behöver man med olika BMI result:        
+print("Din BMI är: ", BMI)
+if BMI < 19:
+    print ("du behöver äta över 2000 kalorier per dag")
+elif BMI > 25:
+    print("du behöver äta mindre än 1400 kalorier per dag")
+else: print("du behöver äta mellan 1400 till 2000 kalorier per dag") 
